@@ -29,6 +29,7 @@ public class Post {
 
     private String body;
     private LocalDateTime createdAt;
+    private String runningTitle;
 
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = true)
