@@ -30,6 +30,7 @@ public class Post {
     private String body;
     private LocalDateTime createdAt;
     private String runningTitle;
+    private Integer weight;
 
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = true)
