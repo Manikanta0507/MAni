@@ -59,4 +59,8 @@ public class AccountService implements UserDetailsService {      //implements Us
         return new User(account.getEmail(), account.getPassword(), grantedAuthority);
                 
     }
+
+    public String checkId(String id) {
+        return accountRepository.getReferenceById(id);
+    }
 }

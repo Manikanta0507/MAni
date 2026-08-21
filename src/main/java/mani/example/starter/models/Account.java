@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private String id;
     private String email;
     private String password;
     private String firstname;

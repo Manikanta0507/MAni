@@ -1,22 +1,15 @@
 package mani.example.starter.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.*;
 
 import mani.example.starter.models.Account;
 import mani.example.starter.services.AccountService;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-
-
-
 
 
 @Controller
@@ -61,6 +54,11 @@ public class AccountController {
                         }
 
         
+    }
+
+    @PostMapping("/login/{id}")
+    public ResponseEntity<String> postMethodName(@PathVariable String id){
+        return ResponseEntity.ok(accountService.checkId(id));
     }
     
 
